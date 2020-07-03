@@ -1,0 +1,254 @@
+@charset 'utf-8';
+
+html {
+    /* 구글 폰트 설정 */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    /* 가로 스크롤 생성 방지  */
+    overflow-x: hidden;
+    color: rgb(29, 29, 31);
+    /* 글자 자간 줄이기 */
+    letter-spacing: -0.05em;
+    background: white;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: rgb(29, 29, 31);
+    /* 밑줄 없애기 */
+    text-decoration: none;
+}
+
+/* Nav */
+.global__nav {
+    /* global__nav의 전체 높이 설정 */
+    height: 52px;
+    border-bottom: 1px solid #bbd;
+    /* 모바일 패딩 좌우 1rem */
+    padding: 0 1rem;
+}
+
+.local__nav {
+    height: 44px;
+    /* 모바일 패딩 좌우 1rem */
+    padding: 0 1rem;
+}
+
+.global__nav__links,
+.local__nav__links {
+    display: flex;
+    /* 수직방향도 중앙 정렬 aling-items */
+    align-items: center;
+    /* 총 너비 1000px */
+    max-width: 1000px;
+    /* aling-items를 썼을때 자신의 컨텐츠만큼만 크기를 차지하기 때문에 센터정렬이 안되서 
+    자신을 감싸는 부모의 높이만큼 높이를 설정해줘야함 그래서 height 100%(부모의높이 100프로)설정 */
+    height: 100%;
+    /* center 정렬을위해서 왼쪽,오른쪽 margin auto */
+    /* margin auto를 사용하면 사용한 방향의 마진을 모두 사용함 */
+    margin: 0 auto;
+}
+
+.global__nav__links {
+    /* links안에 메뉴들 축방향으로 justify-content로 정렬  */
+    justify-content: space-between;
+}
+
+.local__nav__links {
+    justify-content: center;
+}
+
+.local__nav__links .product__name {
+
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.local__nav__links a {
+    font-size: 0.8rem;
+}
+
+/* not = local__nav__links a에 있는 것중에 not()괄호안에 들어가는 것은 빼고 적용한다는 것 */
+.local__nav__links a:not(.product__name) {
+    margin-left: 2em;
+}
+
+/* !-- Nav -- */
+
+/* Section */
+
+.sticky__elem {
+    /* Scroll구간이 맞을때만 보이기 위헤서 display:none으로 안보이게 만들어줌 */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* 해당 scroll에 맞는 구간이 오면 sticky__elem 노출 */
+#show-scene-0 #scroll__section__0 .sticky__elem,
+#show-scene-1 #scroll__section__1 .sticky__elem,
+#show-scene-2 #scroll__section__2 .sticky__elem,
+#show-scene-3 #scroll__section__3 .sticky__elem {
+    display: block;
+}
+
+.scroll__section {
+    /* scroll__section들이 너무 붙어있어서 padding-top으로 떨어뜨려줍니다 */
+    padding-top: 50vh;
+}
+
+/* scroll__section__0 */
+#scroll__section__0 h1 {
+    /* font-size를 body기준 4rem */
+    font-size: 4rem;
+    /* text 중앙 정렬 */
+    text-align: center;
+}
+
+.main__message {
+    /* main_messge 중앙정렬 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px;
+    height: 3em;
+    font-size: 2.5rem;
+
+}
+
+.main__message p {
+    /* main__messge의 p문단 설정 */
+    font-weight: bold;
+    /* text중앙 정렬 */
+    text-align: center;
+    /* 글자 간격높이 */
+    line-height: 1.2;
+}
+
+/* !-- scroll__section__0 -- */
+
+/* /* scroll__section__1 */
+.description {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.description strong {
+    float: left;
+    margin-right: 0.2em;
+    font-size: 3rem;
+    color: rgb(29, 29, 31);
+}
+
+/* !-- scroll__section__1 -- */
+
+/* scroll__section__2 */
+
+.main__message small {
+    /* 다음줄로 넘어갈 수 있게 small = block */
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.2rem;
+}
+
+#scroll__section__2 .main__message {
+    font-size: 3.4rem;
+}
+
+.desc__message {
+    width: 50%;
+    font-weight: bold;
+}
+
+.pin {
+    width: 1px;
+    height: 100px;
+    background: rgb(29, 29, 31);
+}
+
+/* !-- scroll__section__2 -- */
+
+/* scroll__section__3 */
+
+.mid__mesagge {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: 2rem;
+    color: #888;
+}
+
+.mid__mesagge strong {
+    color: rgb(29, 29, 31);
+    ;
+}
+
+.canvas__caption {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: #888;
+    font-size: 1.2rem;
+}
+
+/* !-- scroll__section__3 */
+
+/* Footer */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    background: gold;
+}
+
+/* desctop size */
+@media(min-width: 1024px) {
+    #scroll__section__0 h1 {
+        font-size: 9vw;
+    }
+
+    .main__message {
+        font-size: 4vw;
+    }
+
+    .description {
+        font-size: 2rem;
+    }
+
+    .description strong {
+        font-size: 6rem;
+    }
+
+    #scroll__section__2 .main__message {
+        font-size: 6vw;
+    }
+
+    .main__message small {
+        font-size: 1.5vw;
+    }
+
+    .desc__message {
+        width: 20%;
+    }
+
+    .mid__mesagge {
+        font-size: 4vw;
+    }
+
+    .canvas__caption {
+        font-size: 2rem;
+    }
+}
